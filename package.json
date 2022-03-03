@@ -1,0 +1,21 @@
+{
+  "name": "not-a-thing",
+  "version": "1.0.0",
+  "description": "Prevents fecth from becoming a thing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fetch",
+    "not",
+    "a",
+    "thing"
+  ],
+  "author": "Ryan Cude",
+  "license": "ISC",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "eventemitter3": "^4.0.7"
+  }
+}

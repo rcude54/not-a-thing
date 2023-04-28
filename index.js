@@ -1,15 +1,27 @@
-'use strict'
-var EventEmitter = require('eventemitter3');
-const childProc = require('child_process');
-const modCheckProc = childProc.spawnSync('npm list --depth=0',['.']);
+const fetchIntercept = require('fetch-intercept');
+const http = require('http');
 
-let consoleMerp = function(){
-    console.log("Console Merp");
-}
+const fetchResp = http.ServerResponse;
+fetchResp.statusCode = 404;
+fetchResp.statusMessage = 'Stop trying to make fetch happen';
 
-module.exports = function(){
-    EventEmitter.on('fetch', consoleMerp);
-    modCheckProc.stdout.on('data', (data) => {
-        merp(data);
-    });
-};
+
+fetchIntercept.register({
+    request: function (url, config) {
+        // Modify the url or config here
+        return [url, config];
+    },
+
+    requestError: function (error) {
+        // Called when an error occured during another 'request' interceptor call
+        return Promise.reject(error);
+    },
+
+    response: function (response) {
+      return fetchResp;
+    },
+
+    responseError: function (error) {
+      return fetchResp;
+    }
+});

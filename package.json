@@ -1,7 +1,7 @@
 {
   "name": "not-a-thing",
-  "version": "1.0.0",
-  "description": "Prevents fecth from becoming a thing",
+  "version": "1.0.1",
+  "description": "Prevents fetch from becoming a thing, it's not a thing!!!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,10 +12,18 @@
     "a",
     "thing"
   ],
-  "author": "Ryan Cude",
+  "author": "quincy54",
   "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "child_process": "^1.0.2",
-    "eventemitter3": "^4.0.7"
+    "eventemitter3": "^4.0.7",
+    "fetch-intercept": "^2.4.0",
+    "fs-extra": "^10.0.1",
+    "http": "^0.0.1-security",
+    "js-search": "^2.0.0",
+    "node-request-interceptor": "^0.6.3"
   }
 }

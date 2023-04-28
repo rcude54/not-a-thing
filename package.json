@@ -1,6 +1,6 @@
 {
   "name": "not-happening",
-  "version": "1.0.1",
+  "version": "1.0.1-rc1",
   "description": "Fetch is not happening!",
   "main": "index.js",
   "scripts": {
